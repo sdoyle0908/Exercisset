@@ -28,6 +28,41 @@ function computeLength() {
   return passwordLength;
 }
 
+// Function to determine whether user wants to use uppercase in password 
+
+function computeUpperCase(){
+  upperCaseSelected = prompt("Do you want uppercase letters in your password?");
+    upperCaseSelected = upperCaseSelected.toLowerCase();
+
+    if (upperCaseSelected === "yes"){
+      upperCaseSelected = true;
+      return upperCaseSelected;
+    } else if (upperCaseSelected === "no"){
+      upperCaseSelected = false;
+      return upperCaseSelected
+    } 
+    return upperCaseSelected;
+  }
+
+  // Funtion to determine whether user wants to use numbers in the password
+
+  function computeNumbers(){
+    numberSelected = prompt("Do you want numbers ");
+  }
+
+  if (numberSelected === "yes"){
+    numberSelected = true;
+    return numberSelected;
+  } else if (numberSelected === "no"){
+    numberSelected = false;
+    return numberSelected;
+  }
+    return numberSelected;
+  }
+
+
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
