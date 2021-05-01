@@ -28,40 +28,63 @@ function computeLength() {
   return passwordLength;
 }
 
-// Function to determine whether user wants to use uppercase in password 
+// Function to determine whether user wants to use uppercase in password
 
-function computeUpperCase(){
+function computeUpperCase() {
   upperCaseSelected = prompt("Do you want uppercase letters in your password?");
-    upperCaseSelected = upperCaseSelected.toLowerCase();
+  upperCaseSelected = upperCaseSelected.toLowerCase();
 
-    if (upperCaseSelected === "yes"){
-      upperCaseSelected = true;
-      return upperCaseSelected;
-    } else if (upperCaseSelected === "no"){
-      upperCaseSelected = false;
-      return upperCaseSelected
-    } 
+  if (upperCaseSelected === "yes") {
+    upperCaseSelected = true;
+    return upperCaseSelected;
+  } else if (upperCaseSelected === "no") {
+    upperCaseSelected = false;
     return upperCaseSelected;
   }
+  return upperCaseSelected;
+}
 
-  // Funtion to determine whether user wants to use numbers in the password
+// Funtion to determine whether user wants to use numbers in the password
 
-  function computeNumbers(){
-    numberSelected = prompt("Do you want numbers ");
-  }
+function computeNumbers() {
+  numberSelected = prompt("Do you want numbers ");
 
-  if (numberSelected === "yes"){
+  if (numberSelected === "yes") {
     numberSelected = true;
     return numberSelected;
-  } else if (numberSelected === "no"){
+  } else if (numberSelected === "no") {
     numberSelected = false;
     return numberSelected;
   }
-    return numberSelected;
+  return numberSelected;
+}
+
+//Function to determine whether user wants special characters in password
+
+function computeSpecial() {
+  specialCharSelected = prompt(
+    "Do you want special characters in your password?"
+  );
+  specialCharSelected = specialCharSelected.toLowerCase();
+
+  if (specialCharSelected === "yes") {
+    specialCharSelected = true;
+    return specialCharSelected;
+  } else if (specialCharSelected === "no") {
+    specialCharSelected = false;
+    return specialCharSelected;
   }
+  return specialCharSelected;
+}
 
+//Function used to gather inputs from other functions
 
-
+function generatePassword() {
+  computeLength();
+  computeUpperCase();
+  computeNumbers();
+  computeSpecial();
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
