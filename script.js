@@ -84,6 +84,34 @@ function generatePassword() {
   computeUpperCase();
   computeNumbers();
   computeSpecial();
+
+  var characters = lowerCase;
+  var password = "";
+
+  if (upperCaseSelected && numberSelected && specialCharSelected) {
+    characters += upperCase + number + specialChar;
+  } else if (upperCaseSelected && numberSelected) {
+    characters += upperCase + numbers;
+  } else if (numberSelected && specialCharSelected) {
+    characters += numbers + specialChar;
+  } else if (upperCaseSelected && specialCharSelected) {
+    characters += upperCase + specialChar;
+  } else if (upperCaseSelected) {
+    characters += upperCase;
+  } else if (numberSelected) {
+    characters += numbers;
+  } else if (specialCharSelected) {
+    characters += specialChar;
+  } else {
+    characters === lowerCase;
+  }
+
+  for (var i = 0; i < passwordLength; i++) {
+    password += characters.charAt(
+      Math.floor(Math.random() * characters.charAt.length)
+    );
+  }
+  return password;
 }
 
 // Get references to the #generate element
@@ -91,6 +119,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  var password = "";
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
