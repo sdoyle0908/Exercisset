@@ -34,7 +34,7 @@ function computeLength() {
 // Function to determine whether user wants to use uppercase in password
 function computeUpperCase() {
   var promptResponse = prompt(
-    "Do you want uppercase letters in your password?"
+    "Do you want uppercase letters in your password? (Select OK for Yes or Cancel for No)"
   );
 
   if (promptResponse === null) {
@@ -48,7 +48,9 @@ function computeUpperCase() {
 
 // Funtion to determine whether user wants to use numbers in the password
 function computeNumbers() {
-  var promptResponse = prompt("Do you want numbers?");
+  var promptResponse = prompt(
+    "Do you want numbers?(Select OK for Yes or Cancel for No)"
+  );
 
   if (promptResponse === null) {
     return undefined;
@@ -62,7 +64,7 @@ function computeNumbers() {
 //Function to determine whether user wants special characters in password
 function computeSpecial() {
   var promptResponse = prompt(
-    "Do you want special characters in your password?"
+    "Do you want special characters in your password? (Select OK for Yes or Cancel for No)"
   );
   if (promptResponse === null) {
     return undefined;
@@ -73,7 +75,7 @@ function computeSpecial() {
   return promptResponse === "yes";
 }
 
-//Function used to gather inputs from other functions
+//Var & Function used to gather inputs from other functions
 function generatePassword() {
   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
