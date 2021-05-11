@@ -31,6 +31,20 @@ function computeLength() {
   return parsed;
 }
 
+//Function to determine whether user wants to use lowercase in password
+function computeLowerCase() {
+  var promptResponse = prompt(
+    "Do you want lowercase letters in your password? (Select OK for Yes or Cancel for No)"
+  );
+
+  if (promptResponse === null) {
+    return undefined;
+  }
+  promptResponse = promptResponse.toLowerCase();
+
+  return promptResponse === "yes";
+}
+
 // Function to determine whether user wants to use uppercase in password
 function computeUpperCase() {
   var promptResponse = prompt(
@@ -82,11 +96,20 @@ function generatePassword() {
   var numbers = "0123456789";
   var specialChar = "!@#$%^&*()_-+={}[];:'`~<,>.?/|";
 
-  var characters = lowerCase;
+  var characters = "";
 
   var passwordLength = computeLength();
   if (passwordLength === undefined) {
     return;
+  }
+
+  var lowerCaseSelected = computeLowerCase();
+  if (lowerCaseSelected === undefined) {
+    return;
+  }
+
+  if (lowerCaseSelected === true) {
+    characters += lowerCase;
   }
 
   var upperCaseSelected = computeUpperCase();
